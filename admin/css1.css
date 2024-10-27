@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.messagebox{
+  height: 100%;
+  width: 300px;
+  position: relative;
+}
+.messagebox .menu-btn1{
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  background-color: darkcyan;
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  z-index: 9999;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+#btn1:checked ~ .menu-btn1{
+  right: 225px;
+  bottom: 350px;
+  position: fixed;
+}
+.messagebox .menu-btn1 span .fa-stack {
+  position: absolute;
+  font-size: 1px;
+  transition: all 0.3s ease;
+  position: fixed;
+}
+.messagebox .menu-btn1 i.fa-times{
+  opacity: 0;
+}
+#btn1:checked ~ .menu-btn1 i.fa-times{
+  opacity: 1;
+  transform: rotate(-180deg);
+  position: absolute;
+}
+#btn1:checked ~ .menu-btn1 i.fa-bell {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+#btn1:checked ~ .menu-btn1 i.fa-circle {	
+  opacity: 0;
+  transform: rotate(180deg);
+}
+#sidebar1{
+  position: fixed;
+  bottom: 50px;
+  background-color: lightseagreen;
+  height: 400px;
+  width: 250px;
+  overflow: scroll;
+  right: 20px;
+  transition: all 0.8s ease;
+  transform: scale(0.0001);
+  visibility: hidden;
+}
+#btn1:checked ~ #sidebar1{
+  right: 0;
+  bottom: 0;
+  transform: scale(1);
+  visibility: visible;
+}
+#sidebar1 .list-items{
+  position: relative;
+  background: lightseagreen;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+#sidebar1 .list-items li{
+  padding-left: 8px;
+  margin-top: 15px;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid #333;
+  transition: all 0.3s ease;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+#sidebar1 .list-items li::first-line{
+  color: rgb(49, 7, 7);
+  font-size: large;
+}
+#sidebar1 .list-items li:hover{
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 0px 10px 3px #222;
+}
+#sidebar1 .list-items li:first-child{
+  border-top: none;
+}
+/*mine*/
